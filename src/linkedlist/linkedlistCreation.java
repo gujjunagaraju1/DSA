@@ -138,15 +138,6 @@ public class linkedlistCreation {
         deleteatPosition(2);
         display();
 
-
-
-
-
-
-
-
-
-
     }
 
 
