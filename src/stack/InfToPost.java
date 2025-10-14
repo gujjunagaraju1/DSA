@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class InfToPost {
     public static void main(String[] args) {
-        String input="A+B*(C^D-E)^(F+G*H)-I";
+        String input="a^b^c";
         System.out.println(output(input));
 
     }
@@ -36,7 +36,7 @@ public class InfToPost {
                     Operands.push(c);
                 }
                 else{
-                    while(!Operands.empty() && precedent(Operands.peek())>=precedent(c)){
+                    while(!Operands.empty() && precedent(Operands.peek())>precedent(c)){
                         stringBuilder.append(Operands.pop());
 
                     }

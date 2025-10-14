@@ -2,7 +2,7 @@ package stack;
 
 public class InfToPre {
     public static void main(String[] args) {
-        String input="a*(b+c)/d";
+        String input="x+y*z/w+u";
         String value="";
         StringBuilder builder=new StringBuilder(input);
         String reversed=builder.reverse().toString();
