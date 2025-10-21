@@ -57,6 +57,52 @@ public class linkedlistCreation {
         System.out.println();
         head=currentNode;
     }
+    public static void deletefrombegin(){
+
+        head=head.getNext();
+        if(head==null){
+            return;
+        }
+
+    }
+    public static void deletefromend(){
+        Node currentNode=head;
+        if(head==null){
+              return;
+        }
+        if(head.getNext()==null){
+            head=null;
+            return;
+        }
+
+        while (currentNode.getNext().getNext()!=null){
+            currentNode=currentNode.getNext();
+        }
+        currentNode.setNext(null);
+    }
+    public static void deleteatPosition(int position){
+        Node currentNode=head;
+        if(head==null){
+            return;
+        }
+        if(position==1){
+          deletefrombegin();
+          return;
+        }
+        Node prev=null;
+        for(int i=1;i<position && currentNode!=null;i++){
+            prev=currentNode;
+            currentNode=currentNode.getNext();
+
+
+        }
+        if(currentNode.getNext()==null){
+            prev.setNext(null);
+            return;
+        }
+        prev.setNext(currentNode.getNext());
+
+    }
     public static void insertatPosition(int data,int position){
 
         Node newNode=new Node(data);
@@ -83,26 +129,14 @@ public class linkedlistCreation {
 //        first.setNext(second);
 //        second.setNext(third);
 //       head =first; //shallow copy
-        insertatBegin(10);
-        insertatBegin(20);
+
+
         insertatEnd(29);
         display();
         insertatBegin(30);
-        insertatEnd(33);
         display();
-        insertatPosition(3,3);
+        deleteatPosition(2);
         display();
-        insertatPosition(1,1);
-        display();
-
-
-
-
-
-
-
-
-
 
     }
 
